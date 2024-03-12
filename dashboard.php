@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Navbar with Side Panel</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" type = "text/css" href= "./css/dashboardCss.css" >
     
 </head>
 <body>
         <div class="navBar">
             <div class="img">
-                <img src="logo.jpg" alt="Logo">
+                <img src="logo.png" alt="Logo">
             </div>
             <div class="scrollmenu">
                     <a href="#">Chats</a>
@@ -55,13 +55,15 @@
         <div class="flex-container">
             <div class="customer-info">
                 <form id="customer-form">
-                    <label for="customer_id">Enter Mobile no.</label>
+                    <br>
+                    <label for="customer_id">Enter Mobile no:   </label>
                     <input type="text" id="customer_id" name="customer_id" required>
                     <input type="button" id='getInfoBtn' value="Submit" onclick="fetchCustomerInfo()">
                     <input type="button" id='getProfile' value="Profile" onclick="ProfileInfo()">
+                    <div id="customer-details" class="info-box"></div>
                 </form>
 
-                <div id="customer-details" class="info-box"></div>
+                
             </div>
             <div id="call-dashboard" class="call-box">
                 <h3>Call Dashboard</h3>
@@ -71,20 +73,26 @@
                     <p>Operator: John Doe</p>
                     <p>Extension: 1234</p>
                 </div>
-                <div class="options">
+                <div class="options1">
                     <button>Make Call</button>
                     <button>Hold</button>
                     <button>Conference</button>
                     <button>Release</button>
                     <br><br><br>
                 </div>
-                <div class="options">
+                <div class="options2">
                     <button onclick="TagEnquiry()">Tag Enquiry</button>
                     <button>Tag Complaint</button>
-                    <button>Tag Technical Resolution</button>
+                    
+                </div>
+                <div class="options3">
+                <button>Tag Technical Resolution</button>
                 </div>
             </div>
+            
         </div>
+
+        
         <div class="horizontal-list">
             <button onclick="fetchBGL()">BGL</button>
             <button onclick="fetchPenalty()">Penalty</button>

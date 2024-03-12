@@ -4,11 +4,13 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #FFDEE9;
-    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     margin: 0;
     padding: 0;
-}
+
+    /* background-color: #FFDEE9; */
+    /* background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%); */
+    background-color: #f8f6e1
+} 
 
 
 h1 {
