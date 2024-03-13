@@ -73,10 +73,10 @@ img{
 }
 
 .sidepanel {
-    background-color: #333;
+    background-color: #a5a5a5;
     height: 80%;
     position: fixed;
-    top: 62px;
+    top: 65px;
     left: -100%;
     transition: left 0.3s ease-in-out;
     width: 200px;
@@ -96,9 +96,19 @@ img{
 }
 
 .sidepanel li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
+    font-size: large;
 }
+.sidepanel ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Add horizontal lines between list items */
+}
+
+.sidepanel ul li:last-child {
+    border-bottom: none; /* Remove border-bottom from the last list item to avoid an extra line */
+}
+
 
 .main-content {
     display: flex;
@@ -162,7 +172,7 @@ img{
     margin-right: 40px;
     background-color: #74EBD5;
     background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
-   
+    font-size: large;
 }
 
 
@@ -172,7 +182,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 
@@ -190,11 +200,11 @@ img{
     background-color: #f1eeee;
 }
 .horizontal-list button {
-    background-color: #5e5858ab;
-    border: none;
-    color: #fff;
+    background-color: #a5a5a5;
+    border: 2px solid black;
+    color: black;
     font-size: larger;
-    padding: 10px;
+    padding: 8px;
     text-decoration: none;
     border-radius: 10px;
 }
