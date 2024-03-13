@@ -8,10 +8,35 @@ $sql = "SELECT * FROM BGL_Review";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "<p>Sr No: " . $row["Sr_No"] . ", Customer ID: " . $row["customer_id"] . ", Date: " . $row["Date"] . ", Note / Remark: " . $row["Note_Remark"] . ", Total BGL Amount: " . $row["Total_BGL_Amount"] . ", Total Paid Amount: " . $row["Total_Paid_Amount"] . ", Pay Amount: " . $row["Pay_Amount"] . ", Unpaid Amount: " . $row["Unpaid_Amount"] . ", Total Unpaid Amount: " . $row["Total_Unpaid_Amount"] . "</p>";
-    }
+    echo "<div class='BGL-div'>";
+    echo "<table class='bgl-table'>";
+    echo "<tr>";
+    echo "<th>Sr No</th>";
+    echo "<th>Customer ID</th>";
+    echo "<th>Date</th>";
+    echo "<th>Note / Remark</th>";
+    echo "<th>Total BGL Amount</th>";
+    echo "<th>Total Paid Amount</th>";
+    echo "<th>Pay Amount</th>";
+    echo "<th>Unpaid Amount</th>";
+    echo "<th>Total Unpaid Amount</th>";
+    echo "</tr>";
+    echo "</div>";
+
+while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row["Sr_No"] . "</td>";
+    echo "<td>" . $row["customer_id"] . "</td>";
+    echo "<td>" . $row["Date"] . "</td>";
+    echo "<td>" . $row["Note_Remark"] . "</td>";
+    echo "<td>" . $row["Total_BGL_Amount"] . "</td>";
+    echo "<td>" . $row["Total_Paid_Amount"] . "</td>";
+    echo "<td>" . $row["Pay_Amount"] . "</td>";
+    echo "<td>" . $row["Unpaid_Amount"] . "</td>";
+    echo "<td>" . $row["Total_Unpaid_Amount"] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
 } else {
     echo "0 results";
 }
