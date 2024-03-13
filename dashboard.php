@@ -8,7 +8,7 @@
 <body>
         <div class="navBar">
             <div class="img">
-                <img src="logo.png" alt="Logo">
+                <img src="./Images/logo.png" alt="Logo">
             </div>
             <div class="scrollmenu">
                     <a href="#">Chats</a>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="options2">
                     <button onclick="TagEnquiry()">Tag Enquiry</button>
-                    <button>Tag Complaint</button>
+                    <button onclick="TagComplaint()">Tag Complaint</button>
                     
                 </div>
                 <div class="options3">
@@ -115,6 +115,10 @@
         function TagEnquiry() {
             var customer_id = document.getElementById('customer_id').value;
             window.location.href = 'TagEnquiry.php?customer_id=' + customer_id;
+        }
+        function TagComplaint() {
+            var customer_id = document.getElementById('customer_id').value;
+            window.location.href = 'TagComplaint.php?customer_id=' + customer_id;
         }
     </script>
     <script src="script.js"></script>

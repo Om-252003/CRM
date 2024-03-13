@@ -80,19 +80,18 @@ select {
 
 /* Submit button */
 input[type="submit"] {
-    width: 100%;
+    width: 20%;
     padding: 10px;
     border: none;
     border-radius: 4px;
-    /* background-color: #ff6f61; */
-    background-color: #ff6f61; 
+    background-color: #007bff;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #ff493d;
+    background-color: #0471e6;
 }
 
 /* Bottom section */

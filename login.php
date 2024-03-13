@@ -9,16 +9,18 @@
     
     <form action="login_process.php" method="post">
 
+        <img src="./Images/logoV.png" alt="Logo">
+
         <h1>Login</h1>
 
         <label for="username">Username:</label>
-        <br>
+    
 
         <input type="text" id="username" name = "username" placeholder="ex., 1234567890" required>
-        <br/>
+        <br/><br>
 
         <label for="password">Password:</label>
-        <br>
+        
 
 
         <input type="password" id="password" name="password" placeholder="ex., pass1" required>
