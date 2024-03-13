@@ -94,14 +94,18 @@
 
         
         <div class="horizontal-list">
-            <button onclick="fetchBGL()">BGL</button>
-            <button onclick="fetchPenalty()">Penalty</button>
+            <button onclick="fetchBGLReview()">BGL Review</button>
+           
+        </div>
+
+            <button onclick="fetchPenalty()">Penalty Review</button>
             <button onclick="fetchEnquiry()">Enquiry History</button>
             <button onclick="fetchComplaintHistory()">Complaint History</button>
             <button onclick="fetchActivationHistory()">Activation History</button>
             <button onclick="fetchWorkHistory()">Work History</button>
             
         </div>
+        <div id="customer-history"></div>
 
        
     </div>
@@ -124,6 +128,16 @@
             var customer_id = document.getElementById('customer_id').value;
             window.location.href = 'TagTechnicalResolution.php?customer_id=' + customer_id;
         }
+        function fetchBGLReview() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("customer-history").innerHTML = this.responseText;
+            }
+        };
+        xhr.open("GET", "fetch_bgl_review.php", true);
+        xhr.send();
+}
 
     </script>
     <script src="script.js"></script>

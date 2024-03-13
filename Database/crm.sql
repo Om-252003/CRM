@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2024 at 06:38 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Mar 13, 2024 at 07:06 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `bank_account_cancel_cheque_preview` (
   `Undertaking` mediumblob DEFAULT NULL,
   `Declaration` mediumblob DEFAULT NULL,
   `Security_Deposit_Payment_Slip` mediumblob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bank_account_cancel_cheque_preview`
@@ -41,6 +41,31 @@ CREATE TABLE `bank_account_cancel_cheque_preview` (
 
 INSERT INTO `bank_account_cancel_cheque_preview` (`mob_no`, `Agreement`, `Undertaking`, `Declaration`, `Security_Deposit_Payment_Slip`) VALUES
 (8421279597, 0x75706c6f6164732f70726f66696c652e6a706567, 0x75706c6f6164732f70726f66696c652e6a706567, 0x75706c6f6164732f70726f66696c652e6a706567, 0x75706c6f6164732f70726f66696c652e6a706567);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bgl_review`
+--
+
+CREATE TABLE `bgl_review` (
+  `Sr_No` int(11) NOT NULL,
+  `customer_id` varchar(255) NOT NULL,
+  `Date` date NOT NULL,
+  `Note_Remark` text DEFAULT NULL,
+  `Total_BGL_Amount` decimal(10,2) DEFAULT NULL,
+  `Total_Paid_Amount` decimal(10,2) DEFAULT NULL,
+  `Pay_Amount` decimal(10,2) DEFAULT NULL,
+  `Unpaid_Amount` decimal(10,2) DEFAULT NULL,
+  `Total_Unpaid_Amount` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bgl_review`
+--
+
+INSERT INTO `bgl_review` (`Sr_No`, `customer_id`, `Date`, `Note_Remark`, `Total_BGL_Amount`, `Total_Paid_Amount`, `Pay_Amount`, `Unpaid_Amount`, `Total_Unpaid_Amount`) VALUES
+(1, '1234567890', '2024-03-15', 'Customer has made partial payment.', '1500.00', '1000.00', '500.00', '500.00', '1500.00');
 
 -- --------------------------------------------------------
 
@@ -61,7 +86,7 @@ CREATE TABLE `call_history` (
   `Resolution` varchar(255) DEFAULT NULL,
   `Interaction_Type` varchar(255) DEFAULT NULL,
   `Remark` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `call_history`
@@ -86,7 +111,7 @@ CREATE TABLE `contact_details` (
   `Official_Mail_ID` varchar(255) NOT NULL,
   `Communication_Address` varchar(255) NOT NULL,
   `Permanent_Address` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact_details`
@@ -117,7 +142,7 @@ CREATE TABLE `document_details` (
   `Branch_Location` varchar(255) DEFAULT NULL,
   `Account_no` varchar(255) DEFAULT NULL,
   `IFSC_Code` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `document_details`
@@ -141,7 +166,7 @@ CREATE TABLE `operatormaininfo` (
   `Project` varchar(255) DEFAULT NULL,
   `Important_Notification` varchar(255) DEFAULT NULL,
   `Activation_Status` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `operatormaininfo`
@@ -162,7 +187,7 @@ CREATE TABLE `operators` (
   `gender` varchar(10) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `operators`
@@ -186,7 +211,7 @@ CREATE TABLE `personal_information` (
   `Relationship` varchar(255) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
   `In_Case_Emergency_Contact_No` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `personal_information`
@@ -198,6 +223,86 @@ INSERT INTO `personal_information` (`mob_no`, `Gender`, `Date_Of_Birth`, `Blood_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tagcomplaint`
+--
+
+CREATE TABLE `tagcomplaint` (
+  `mob_no` varchar(20) NOT NULL,
+  `tag_date_time` datetime NOT NULL,
+  `call_type` varchar(20) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `sub_type` varchar(50) NOT NULL,
+  `complaint_issue` varchar(255) NOT NULL,
+  `escalation_desk` varchar(255) NOT NULL,
+  `escalation_remark` text NOT NULL,
+  `resolution_tat` varchar(50) NOT NULL,
+  `resolution_status` varchar(50) NOT NULL,
+  `complaint_handle` varchar(255) NOT NULL,
+  `complaint_remark` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tagcomplaint`
+--
+
+INSERT INTO `tagcomplaint` (`mob_no`, `tag_date_time`, `call_type`, `type`, `sub_type`, `complaint_issue`, `escalation_desk`, `escalation_remark`, `resolution_tat`, `resolution_status`, `complaint_handle`, `complaint_remark`) VALUES
+('8421279597', '2024-03-13 00:20:00', 'Inbound', 'dr', 'er', 'ertrg', 'erf', 'efef', 'esf', 'unresolved', 'ffwe', 'efwef');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tag_enquiry`
+--
+
+CREATE TABLE `tag_enquiry` (
+  `mob_no` bigint(20) NOT NULL,
+  `tag_date_time` datetime DEFAULT NULL,
+  `call_type` varchar(20) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `sub_type` varchar(50) DEFAULT NULL,
+  `query` text DEFAULT NULL,
+  `resolution` text DEFAULT NULL,
+  `feedback` varchar(100) DEFAULT NULL,
+  `resolution_status` varchar(20) DEFAULT NULL,
+  `remark` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tag_enquiry`
+--
+
+INSERT INTO `tag_enquiry` (`mob_no`, `tag_date_time`, `call_type`, `type`, `sub_type`, `query`, `resolution`, `feedback`, `resolution_status`, `remark`) VALUES
+(8421279597, '2024-03-12 08:00:00', 'Inbound', 'Support', 'Technical', 'How to reset password?', 'Password reset link sent.', 'Good service', 'Resolved', 'Customer issue resolved successfully.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tag_technical_resolution`
+--
+
+CREATE TABLE `tag_technical_resolution` (
+  `customer_id` varchar(20) NOT NULL,
+  `tag_date_time` datetime NOT NULL,
+  `call_type` varchar(20) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `sub_type` varchar(100) NOT NULL,
+  `query` text NOT NULL,
+  `resolution` text NOT NULL,
+  `resolution_status` varchar(100) NOT NULL,
+  `feedback` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tag_technical_resolution`
+--
+
+INSERT INTO `tag_technical_resolution` (`customer_id`, `tag_date_time`, `call_type`, `type`, `sub_type`, `query`, `resolution`, `resolution_status`, `feedback`, `remark`) VALUES
+('8421279597', '2024-03-13 10:09:00', 'inbound', 'dc', 'er', 'fef', 'sef', 'resolved', 'efwefr', 'werwer');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -205,7 +310,7 @@ CREATE TABLE `users` (
   `user_id` char(10) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `mob_no` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -223,6 +328,12 @@ INSERT INTO `users` (`user_id`, `pass`, `mob_no`) VALUES
 --
 ALTER TABLE `bank_account_cancel_cheque_preview`
   ADD PRIMARY KEY (`mob_no`);
+
+--
+-- Indexes for table `bgl_review`
+--
+ALTER TABLE `bgl_review`
+  ADD PRIMARY KEY (`Sr_No`);
 
 --
 -- Indexes for table `call_history`
@@ -261,6 +372,24 @@ ALTER TABLE `personal_information`
   ADD PRIMARY KEY (`mob_no`);
 
 --
+-- Indexes for table `tagcomplaint`
+--
+ALTER TABLE `tagcomplaint`
+  ADD PRIMARY KEY (`mob_no`);
+
+--
+-- Indexes for table `tag_enquiry`
+--
+ALTER TABLE `tag_enquiry`
+  ADD PRIMARY KEY (`mob_no`);
+
+--
+-- Indexes for table `tag_technical_resolution`
+--
+ALTER TABLE `tag_technical_resolution`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -269,6 +398,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `bgl_review`
+--
+ALTER TABLE `bgl_review`
+  MODIFY `Sr_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `call_history`
