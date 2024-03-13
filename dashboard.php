@@ -86,7 +86,7 @@
                     
                 </div>
                 <div class="options3">
-                <button>Tag Technical Resolution</button>
+                <button onclick="TagTechnicalResolution()">Tag Technical Resolution</button>
                 </div>
             </div>
             
@@ -120,6 +120,11 @@
             var customer_id = document.getElementById('customer_id').value;
             window.location.href = 'TagComplaint.php?customer_id=' + customer_id;
         }
+        function TagTechnicalResolution() {
+            var customer_id = document.getElementById('customer_id').value;
+            window.location.href = 'TagTechnicalResolution.php?customer_id=' + customer_id;
+        }
+
     </script>
     <script src="script.js"></script>
 </body>

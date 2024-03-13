@@ -63,16 +63,8 @@
     </div>
     <?php
     // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "CRM";
+    require_once "./Database/dbConnection.php";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Check if the form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

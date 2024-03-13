@@ -7,6 +7,8 @@
     padding: 15px;
     width:500px;
     height: 500px;
+    background-color: #8ff3e0;
+    background-image: linear-gradient(90deg, #90eedd 0%, #adb7e4 100%);
 }
 
 .ui-box-sub1{
@@ -26,7 +28,7 @@
     border-radius: 15px;
     padding: 15px;
     width: 98%;
-
+    background-color: #FFFDD0;
     justify-content: space-evenly;
     
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="profileCss.css">
+    <link rel="stylesheet" type="text/css" href="./css/profileCss.css">
     <title>Operator Profile</title>
     <script>
     function showPreview(imageUrl) {
