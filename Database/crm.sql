@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 07:06 AM
+-- Generation Time: Mar 14, 2024 at 07:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -65,7 +65,7 @@ CREATE TABLE `bgl_review` (
 --
 
 INSERT INTO `bgl_review` (`Sr_No`, `customer_id`, `Date`, `Note_Remark`, `Total_BGL_Amount`, `Total_Paid_Amount`, `Pay_Amount`, `Unpaid_Amount`, `Total_Unpaid_Amount`) VALUES
-(1, '1234567890', '2024-03-15', 'Customer has made partial payment.', '1500.00', '1000.00', '500.00', '500.00', '1500.00');
+(1, '1234567890', '2024-03-15', 'Customer has made partial payment. And some random questions.', '1500.00', '1000.00', '500.00', '500.00', '1500.00');
 
 -- --------------------------------------------------------
 
@@ -154,6 +154,33 @@ INSERT INTO `document_details` (`mob_no`, `Profile_Picture`, `Aadhar_Card_No`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `enquiry_history`
+--
+
+CREATE TABLE `enquiry_history` (
+  `Sr_No` int(11) NOT NULL,
+  `customer_id` varchar(255) DEFAULT NULL,
+  `Tag_Date_Time` datetime DEFAULT NULL,
+  `Call_Type` varchar(50) DEFAULT NULL,
+  `Type` varchar(255) DEFAULT NULL,
+  `Sub_Type` varchar(255) DEFAULT NULL,
+  `Query` varchar(1000) DEFAULT NULL,
+  `Feedback` varchar(1000) DEFAULT NULL,
+  `Resolution` varchar(1000) DEFAULT NULL,
+  `Resolution_Status` varchar(50) DEFAULT NULL,
+  `Remark` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `enquiry_history`
+--
+
+INSERT INTO `enquiry_history` (`Sr_No`, `customer_id`, `Tag_Date_Time`, `Call_Type`, `Type`, `Sub_Type`, `Query`, `Feedback`, `Resolution`, `Resolution_Status`, `Remark`) VALUES
+(1, '1234567890', '2024-03-13 09:30:00', 'Inbound', 'General', 'Technical', 'How do I reset my password?', 'Customer was satisfied with the explanation provided.', 'Password reset link sent to customer.', 'Resolved', 'Issue resolved successfully.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `operatormaininfo`
 --
 
@@ -195,6 +222,30 @@ CREATE TABLE `operators` (
 
 INSERT INTO `operators` (`mob_no`, `name`, `gender`, `email`, `address`) VALUES
 ('8421279597', 'Ram', 'male', 'ram@123', 'pune');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penalty_review`
+--
+
+CREATE TABLE `penalty_review` (
+  `Sr_No` int(11) NOT NULL,
+  `customer_id` varchar(255) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `Note_Remark` varchar(255) DEFAULT NULL,
+  `Penalty_Amount` decimal(10,2) DEFAULT NULL,
+  `Total_Paid_Amount` decimal(10,2) DEFAULT NULL,
+  `Unpaid_Amount` decimal(10,2) DEFAULT NULL,
+  `Total_Penalty_Amount` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penalty_review`
+--
+
+INSERT INTO `penalty_review` (`Sr_No`, `customer_id`, `Date`, `Note_Remark`, `Penalty_Amount`, `Total_Paid_Amount`, `Unpaid_Amount`, `Total_Penalty_Amount`) VALUES
+(1, '1234567890', '2024-03-01', 'Late payment', '50.00', '20.00', '30.00', '50.00');
 
 -- --------------------------------------------------------
 
@@ -354,6 +405,12 @@ ALTER TABLE `document_details`
   ADD PRIMARY KEY (`mob_no`);
 
 --
+-- Indexes for table `enquiry_history`
+--
+ALTER TABLE `enquiry_history`
+  ADD PRIMARY KEY (`Sr_No`);
+
+--
 -- Indexes for table `operatormaininfo`
 --
 ALTER TABLE `operatormaininfo`
@@ -364,6 +421,12 @@ ALTER TABLE `operatormaininfo`
 --
 ALTER TABLE `operators`
   ADD PRIMARY KEY (`mob_no`);
+
+--
+-- Indexes for table `penalty_review`
+--
+ALTER TABLE `penalty_review`
+  ADD PRIMARY KEY (`Sr_No`);
 
 --
 -- Indexes for table `personal_information`
@@ -410,6 +473,18 @@ ALTER TABLE `bgl_review`
 --
 ALTER TABLE `call_history`
   MODIFY `Mob_no` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9876543211;
+
+--
+-- AUTO_INCREMENT for table `enquiry_history`
+--
+ALTER TABLE `enquiry_history`
+  MODIFY `Sr_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `penalty_review`
+--
+ALTER TABLE `penalty_review`
+  MODIFY `Sr_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

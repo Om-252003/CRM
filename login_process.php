@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 } else {
     // User does not exist, redirect back to login page
    print("errrrr");
-    header("Location: login.php");
+    header("Location: index.php");
 }
 $conn->close();
 ?>
