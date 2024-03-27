@@ -3,57 +3,69 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="./css/login.css">
-
 </head>
-<body>
-    
-    <form action="login_process.php" method="post">
+<body>   
+    <div class="log_prt">
+        <div class="logbox">
+            <div class="sub_box1">
+                <div class="loglogo">
+                    <img src="./Images/logo-removebg-preview.png" alt="Logo of CHANAKYA">
+                </div>    
+                <div class="logtext">
+                    <div>
+                        <h2 class="t1">CHANAKYA</h2><h2 class="t2">E-SERVICES</h2>
+                    </div>
 
-        <img src="./Images/logoV.png" alt="Logo">
+                    <h3>"The smallest things make the biggest difference"</h3>
+                </div>
+            </div>
 
-        <h1>Login</h1>
+        <form action="login_process.php" method="post">
+            <div class="sub_box2">
 
-        <label for="username">Username:</label>
-    
+                
+                    <div class="loghead">
+                        <h1>Login</h1>
+                    </div>
 
-        <input type="text" id="username" name = "username" placeholder="ex., 1234567890" required>
-        <br/><br>
+                    <div class="inputdiv">
+                        <label for="user">User ID:</label>
+                        <input type="text" name="username" id="username" class="inputbox" placeholder="user1">                    
+                    </div>
 
-        <label for="password">Password:</label>
-        
+                    <div class="inputdiv">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" class="inputbox" placeholder="pass1">
+                    </div>
 
+                    <div class="inputdiv">
+                        <label for="usertype">Designation:</label>
+                        <select name="usertype" id="designation">
 
-        <input type="password" id="password" name="password" placeholder="ex., pass1" required>
-        <br/><br/>
-
-
-        <div style="text-align: center;">
-
-            <select  id="designation" required>
-
-                <option value="">Please Choose Your Designation</option>
-                <option value="director">DIRECTOR</option>
-                <option value="ceo">CEO</option>
-                <option value="admin_panel">ADMIN PANEL</option>
-                <option value="accountant">ACCOUNTANT</option>
-                <option value="mis">MIS</option>
-                <option value="hr_head">HR HEAD</option>
-                <option value="hr_executive">HR EXECUTIVE</option>
-                <option value="marketing_manager">MARKETING MANAGER</option>
-                <option value="hr_recruiter">OPERATOR - HR RECRUITER</option>
-                <option value="legal_officer">LEGAL OFFICER</option>
-                <option value="project_manager">PROJECT MANAGER</option>
-                <option value="assistant_project_manager">ASSISTANT PROJECT MANAGER</option>
-                <option value="bgl_recovery_executive">BGL RECOVERY EXECUTIVE</option>
-                <option value="technical_support">TECHNICAL SUPPORT</option>
-                <option value="crm_admin_panel">CRM ADMIN PANEL</option>
-                </select>
+                            <option value="#">Please Choose Your Designation</option>
+                            <option value="director">DIRECTOR</option>
+                            <option value="ceo">CEO</option>
+                            <option value="admin_panel">ADMIN PANEL</option>
+                            <option value="accountant">ACCOUNTANT</option>
+                            <option value="mis">MIS</option>
+                            <option value="hr_head">HR HEAD</option>
+                            <option value="hr_executive">HR EXECUTIVE</option>
+                            <option value="marketing_manager">MARKETING MANAGER</option>
+                            <option value="hr_recruiter">OPERATOR - HR RECRUITER</option>
+                            <option value="legal_officer">LEGAL OFFICER</option>
+                            <option value="project_manager">PROJECT MANAGER</option>
+                            <option value="assistant_project_manager">ASSISTANT PROJECT MANAGER</option>
+                            <option value="bgl_recovery_executive">BGL RECOVERY EXECUTIVE</option>
+                            <option value="technical_support">TECHNICAL SUPPORT</option>
+                            <option value="crm_admin_panel">CRM ADMIN PANEL</option>
+                        </select>
+                    </div>
+                    <div class="submitdiv">
+                        <button type="submit">Enter</button>
+                    </div>
+            </div>
+        </form>
         </div>
-        
-        <br><br>
-
-        <input type="submit" value="Login">
-
-    </form>
+    </div>
 </body>
 </html>

@@ -59,32 +59,30 @@
     require_once "./Database/dbConnection.php";
 
 
-    // Check if the form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Prepare and bind the SQL statement
-        $stmt = $conn->prepare("INSERT INTO Tag_Enquiry (mob_no, tag_date_time, call_type, type, sub_type, query, resolution, feedback, resolution_status, remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssss", $customer_id, $tag_date_time, $call_type, $type, $sub_type, $query, $resolution, $feedback, $resolution_status, $remark);
-
-        // Set parameters and execute
+        // Escape user inputs for security
         $customer_id = $_POST['customer_id'];
-        $tag_date_time = $_POST['tag_date_time'];
-        $call_type = $_POST['call_type'];
-        $type = $_POST['type'];
-        $sub_type = $_POST['sub_type'];
-        $query = $_POST['query'];
-        $resolution = $_POST['resolution'];
-        $feedback = $_POST['feedback'];
-        $resolution_status = $_POST['resolution_status'];
-        $remark = $_POST['remark'];
-
-        if ($stmt->execute()) {
-            echo "New record inserted successfully";
+        $Tag_Date_Time = $_POST['tag_date_time'];
+        $Call_Type = $_POST['call_type'];
+        $Type = $_POST['type'];
+        $Sub_Type = $_POST['sub_type'];
+        $Query = $_POST['query'];
+        $Resolution = $_POST['resolution'];
+        $Feedback = $_POST['feedback'];
+        $Resolution_Status = $_POST['resolution_status'];
+        $Remark = $_POST['remark'];
+    
+        // Prepare SQL statement to insert data into tag_enquiry table
+        $sql = "INSERT INTO tag_enquiry (customer_id, Tag_Date_Time, Call_Type, Type, Sub_Type, Query, Resolution, Feedback, Resolution_Status, Remark)
+                VALUES ('$customer_id', '$Tag_Date_Time', '$Call_Type', '$Type', '$Sub_Type', '$Query', '$Resolution', '$Feedback', '$Resolution_Status', '$Remark')";
+    
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
-
-        $stmt->close();
     }
+    
 
     $conn->close();
     ?>

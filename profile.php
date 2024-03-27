@@ -4,11 +4,11 @@
     <link rel="stylesheet" type="text/css" href="./css/profileCss.css">
     <title>Operator Profile</title>
     <script>
-    function showPreview(imageUrl) {
-    window.open(imageUrl, '_blank', 'width=400,height=400');
-}
+        function showPreview(imageUrl) {
+        window.open(imageUrl, '_blank', 'width=400,height=400');
+        }
 
-</script>
+    </script>
 
 </head>
 <body>
