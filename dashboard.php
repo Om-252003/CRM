@@ -112,57 +112,8 @@
        
     </div>
    
-    <div id="customer-history"></div>
-    <script>
-        function ProfileInfo() {
-            var customer_id = document.getElementById('customer_id').value;
-            window.location.href = 'profile.php?customer_id=' + customer_id;
-        }
-        function TagEnquiry() {
-            var customer_id = document.getElementById('customer_id').value;
-            window.location.href = 'TagEnquiry.php?customer_id=' + customer_id;
-        }
-        function TagComplaint() {
-            var customer_id = document.getElementById('customer_id').value;
-            window.location.href = 'TagComplaint.php?customer_id=' + customer_id;
-        }
-        function TagTechnicalResolution() {
-            var customer_id = document.getElementById('customer_id').value;
-            window.location.href = 'TagTechnicalResolution.php?customer_id=' + customer_id;
-        }
-        function fetchBGLReview() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("customer-history").innerHTML = this.responseText;
-            }
-        };
-        xhr.open("GET", "FetchBGLReview.php", true);
-        xhr.send();
-        }
-
-        function fetchPenaltyReview(){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("customer-history").innerHTML = this.responseText;
-            }
-        };
-        xhr.open("GET", "FetchPenaltyReview.php", true);
-        xhr.send();
-        }
-        function fetchEnquiryHistory(){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("customer-history").innerHTML = this.responseText;
-            }
-        };
-        xhr.open("GET", "FetchEnquiryHistory.php", true);
-        xhr.send();
-        }
-
-    </script>
+    
+    
     <script src="script.js"></script>
 </body>
 </html>

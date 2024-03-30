@@ -9,7 +9,7 @@
         <div class="logbox">
             <div class="sub_box1">
                 <div class="loglogo">
-                    <img src="./Images/logo-removebg-preview.png" alt="Logo of CHANAKYA">
+                    <img src="./NewImages/logo-removebg-preview.png" alt="Logo of CHANAKYA">
                 </div>    
                 <div class="logtext">
                     <div>

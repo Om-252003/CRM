@@ -4,7 +4,7 @@
 require_once "./Database/dbConnection.php";
 
 // Fetch data from BGL_Review table
-$sql = "SELECT * FROM BGL_Review";
+$sql = "SELECT * FROM BGL_Review where customer_id = '8421279597'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

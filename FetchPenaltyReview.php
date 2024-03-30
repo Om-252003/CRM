@@ -3,7 +3,7 @@
 require_once "./Database/dbConnection.php";
 
 
-        $sql = "SELECT * FROM Penalty_Review";
+        $sql = "SELECT * FROM Penalty_Review where customer_id = '8421279597'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

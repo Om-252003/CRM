@@ -24,7 +24,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // User exists, set session variable and redirect to profile page
     $_SESSION['username'] = $username;
-    header("Location: dashboard.php");
+    header("Location: NewDashboard.html");
     exit;
 } else {
     // User does not exist, redirect back to login page

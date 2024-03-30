@@ -9,7 +9,7 @@ if ($conn->connect_error)
 }
 
 // Prepare SQL statement to select data from tag_enquiry table
-$sql = "SELECT * FROM tag_enquiry";
+$sql = "SELECT * FROM tag_enquiry where customer_id = '8421279597'";
 
 // Execute SQL query
 $result = $conn->query($sql);
@@ -19,11 +19,12 @@ if ($result->num_rows > 0)
 {
     // Output table header
     echo "<table class='enquiry-table' border='1'>";
-    echo "<tr><th>Customer ID</th><th>Tag Date & Time</th><th>Call Type</th><th>Type</th><th>Sub Type</th><th>Query</th><th>Resolution</th><th>Feedback</th><th>Resolution Status</th><th>Remark</th></tr>";
+    echo "<tr><th>Sr No.</th><th>Customer ID</th><th>Tag Date & Time</th><th>Call Type</th><th>Type</th><th>Sub Type</th><th>Query</th><th>Resolution</th><th>Feedback</th><th>Resolution Status</th><th>Remark</th></tr>";
 
     // Output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
+        echo "<td>" . $row["sr_no"] . "</td>";
         echo "<td>" . $row["customer_id"] . "</td>";
         echo "<td>" . $row["Tag_Date_Time"] . "</td>";
         echo "<td>" . $row["Call_Type"] . "</td>";
