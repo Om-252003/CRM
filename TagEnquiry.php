@@ -68,13 +68,12 @@
         $Sub_Type = $_POST['sub_type'];
         $Query = $_POST['query'];
         $Resolution = $_POST['resolution'];
-        $Feedback = $_POST['feedback'];
         $Resolution_Status = $_POST['resolution_status'];
         $Remark = $_POST['remark'];
     
         // Prepare SQL statement to insert data into tag_enquiry table
-        $sql = "INSERT INTO tag_enquiry (customer_id, Tag_Date_Time, Call_Type, Type, Sub_Type, Query, Resolution, Feedback, Resolution_Status, Remark)
-                VALUES ('$customer_id', '$Tag_Date_Time', '$Call_Type', '$Type', '$Sub_Type', '$Query', '$Resolution', '$Feedback', '$Resolution_Status', '$Remark')";
+        $sql = "INSERT INTO tag_enquiry (customer_id, Tag_Date_Time, Call_Type, Type, Sub_Type, Query, Resolution,  Resolution_Status, Remark)
+                VALUES ('$customer_id', '$Tag_Date_Time', '$Call_Type', '$Type', '$Sub_Type', '$Query', '$Resolution',  '$Resolution_Status', '$Remark')";
     
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
